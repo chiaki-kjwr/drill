@@ -11,40 +11,64 @@ class Practice13 extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Flex(
-              direction: Axis.vertical,
-              children: [
-                Expanded(
-                  child: Stack(children: [
-                    Image(
-                      image: AssetImage('images/dice1.png'),
-                      width: 100,
-                      height: 100,
+            Expanded(
+              child: Stack(children: [
+                // stack child 1
+                Container(
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(50),
+                    child: Image(
+                      image: AssetImage('assets/images/sample.jpeg'),
                     ),
-                    Positioned(
-                      top: 5,
-                      right: 1,
-                      child: Container(
-                        width: 50,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          color: Colors.red,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'NEW',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 12,
-                            ),
-                          ),
+                  ),
+                ),
+                // stack child 2
+                Positioned(
+                  top: 10,
+                  right: 1,
+                  child: Container(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Center(
+                      child: Text(
+                        'NEW',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
                         ),
                       ),
                     ),
-                  ]),
+                  ),
                 ),
-              ],
+              ]),
+            ),
+            Expanded(
+              child: Stack(children: [
+                Positioned(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            image: AssetImage('assets/images/sample2.jpeg'))),
+                  ),
+                ),
+                Positioned(
+                  top: 300,
+                  right: 40,
+                  child: Container(
+                    width: 20,
+                    height: 20,
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                ),
+              ]),
             ),
           ],
         ),
